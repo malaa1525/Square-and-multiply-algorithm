@@ -1,0 +1,19 @@
+fn main() {
+    let N: u64 =1000;
+    let g: u64 =3;
+    let A0: u64 =2_u64.pow(10);
+    let mut A=A0;
+    let mut a: u64 =g;
+    let mut b: u64=1;
+    let mut i=1;
+    println!("Step no.0, A={A}, b={b}, a={a}");
+    while A>0{
+        if A%2==1 {b*=a; b%=N;}
+        a=(a*a)%N;
+        A=A/2 as u64;
+        println!("Step no.{i}, A={A}, b={b}, a={a}");
+        i+=1;
+    }
+    println!("{g}^{A0} mod {N}={b}");
+    
+}
